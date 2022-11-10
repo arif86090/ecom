@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		/* 
+		html,body{
+  overflow-x:hidden;
+} */
+
+		.main-all{
+			height:100vh;
+			width:100%;
+			background:grey;
+			position:relative;
+			overflow: hidden;
+		}
+		.main-btn{
+			height:80px;
+			width:70px;
+			background:red;
+			/* float:right; */
+			
+			position:absolute;
+			right:20px;
+			bottom:20px;
+			
+		}
+		.btn-1,.btn-3{
+			
+			
+			margin-top:10px;
+			margin-left:10px;
+			display:flex;
+
+		}
+		.btn-2{
+			/* height:60px;
+			width:50px; */
+			
+			margin-top:10px;
+			margin-left:10px;
+			/* background:green; */
+			display:flex;
+
+		}
+		.all-btn{
+			display: flex;
+			position:absolute;
+			right:-800px;
+			bottom:20px;
+			transition: .4s;
+		}
+		.all-btn.active{
+			right:120px;
+		}
+		.all-btn-2{
+			height:80px;
+			width:70px;
+			position:absolute;
+			background: green;
+			right:20px;
+			bottom:20px;
+			visibility: hidden;
+			opacity:0;
+			transition: .4s;
+		}
+		.all-btn-2.active{
+			visibility: visible;
+			bottom:130px;
+			opacity: 1;
+		}
+		.sub-btn-one-1,.sub-btn-two-1,.sub-btn-three-1{
+			height:80px;
+			width:0px;
+			background:red;
+			transition:.4s;
+		}
+		.sub-btn-two-1.active{
+			transition: .4s;
+			width:100px!important;
+		}
+		.sub-btn-three-1.active{
+			width:200px!important;
+		}
+
+		.sub-btn-one-1.activee{
+			width:200px!important;
+		}
+		.sub-btn-one-2,.sub-btn-two-2,.sub-btn-three-2{
+			height:80px;
+			width:70px;
+			background:green;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="main-all">
+	<div class="main" >
+		<div class="main-btn"></div>
+	</div>
+	<div class="all-btn">
+		<div class="btn-1">
+			<div class="sub-btn-one-1"></div>
+			<div class="sub-btn-one-2"></div>
+		</div>
+
+		<div class="btn-2">
+			<div class="sub-btn-two-1"></div>
+			<div class="sub-btn-two-2"></div>
+		</div>
+		<div class="btn-3">
+			<div class="sub-btn-three-1"></div>
+			<div class="sub-btn-three-2"></div>
+		</div>
+
+		<!-- <div class="btn-1">
+			<div class="sub-btn-1"></div>
+			<div class="sub-btn-2"></div>
+		</div> -->
+		
+		<div class="btn-1"></div>
+	</div>
+	<div class="all-btn-2"></div>
+
+	</div>
+
+	<script>
+		
+		document.querySelector('.main-btn').addEventListener('click',
+	function(){
+		document.querySelector('.all-btn').classList.toggle('active');
+		
+
+})  
+
+document.querySelector('.main-btn').addEventListener('click',
+	function(){
+		document.querySelector('.all-btn-2').classList.toggle('active');
+
+
+})  
+
+// ***************btn-1
+
+document.querySelector('.btn-1').addEventListener('click',
+	function(){
+		document.querySelector('.sub-btn-one-1').classList.toggle('activee');
+
+
+})  
+
+// ***************btn-2
+	document.querySelector('.btn-2').addEventListener('click',
+	function(){
+		document.querySelector('.sub-btn-two-1').classList.toggle('active');
+
+
+})	
+
+
+// ***************btn-3
+document.querySelector('.btn-3').addEventListener('click',
+	function(){
+		document.querySelector('.sub-btn-three-1').classList.toggle('active');
+
+
+}) 
+
+
+	</script>
+</body>
+</html>
